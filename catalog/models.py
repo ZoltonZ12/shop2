@@ -1,3 +1,15 @@
 from django.db import models
+from datetime import *
+
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Название категории')
+    alias = models.SlugField(verbose_name='Alias категории')
+
+class Item(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Название товара')
+    name = models.IntegerField(default=0, verbose_name= 'Цена')
+    image = models.CharField(max_length=255, verbose_name='Ссылка на картинку')
+    alias = models.SlugField(verbose_name='Alias товара')
+    category = models.ForeignKey(Category)
