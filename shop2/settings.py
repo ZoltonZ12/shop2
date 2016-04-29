@@ -80,6 +80,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': 'shop2_db_make_from_pg3',
+        #'USER': 'qqq',
+        #'PASSWORD': 'qqq',
+        #'HOST': 'localhost',
+        #'PORT': '',
     }
 }
 

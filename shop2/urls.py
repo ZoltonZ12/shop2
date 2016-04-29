@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from catalog import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$/', 'catalog.views.home'),
+    url(r'^$', views.home),
+    url(r'^item/(?P<alias>[^/]+)', views.item),
+    url(r'^(?P<alias>[^/]+)', views.get_category),
 ]
